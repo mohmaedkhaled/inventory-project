@@ -99,14 +99,6 @@ def employee():
     emp.protocol("WM_DELETE_WINDOW", exitt)
     emp.mainloop()
 
-# def invoices():
-#     adm.withdraw()
-#     global invoice
-#     invoice = Toplevel()
-#     page7 = Invoice(invoice)
-#     page7.time()
-#     invoice.protocol("WM_DELETE_WINDOW", exitt)
-#     invoice.mainloop()
 
 class Admin_Page:
     def __init__(self, top=None):
@@ -415,13 +407,13 @@ def sale():
 
 def buy():
     emp.withdraw()
-    global buy
+    global by
     global page3
-    emp = Toplevel()
-    page3 = Employee(adm)
+    by = Toplevel()
+    page3 = Employee(by)
     page3.time()
-    emp.protocol("WM_DELETE_WINDOW", exitt)
-    emp.mainloop()
+    by.protocol("WM_DELETE_WINDOW", exitt)
+    by.mainloop()
 
 class Employee:
     def __init__(self, top=None):
@@ -466,7 +458,7 @@ class Employee:
         self.button2.configure(font="-family {Poppins SemiBold} -size 12")
         self.button2.configure(borderwidth="0")
         self.button2.configure(text="""شراء""")
-        self.button2.configure(command=Buy)
+        self.button2.configure(command=buy)
 
         self.button3 = Button(emp)
         self.button3.place(relx=0.338, rely=0.508, width=146, height=63)
@@ -534,12 +526,12 @@ class Buy:
         top.resizable(0, 0)
         top.title("Billing System")
 
-        self.label = Label(adm)
+        self.label = Label(by)
         self.label.place(relx=0, rely=0, width=1366, height=768)
         self.img = PhotoImage(file="./images/bill_window.png")
         self.label.configure(image=self.img)
 
-        self.message = Label(adm)
+        self.message = Label(by)
         self.message.place(relx=0.038, rely=0.055, width=136, height=30)
         self.message.configure(font="-family {Poppins} -size 10")
         self.message.configure(foreground="#000000")
@@ -547,31 +539,31 @@ class Buy:
         self.message.configure(text=username)
         self.message.configure(anchor="w")
 
-        self.clock = Label(adm)
+        self.clock = Label(by)
         self.clock.place(relx=0.9, rely=0.065, width=102, height=36)
         self.clock.configure(font="-family {Poppins Light} -size 12")
         self.clock.configure(foreground="#000000")
         self.clock.configure(background="#ffffff")
 
-        self.entry1 = Entry(adm)
+        self.entry1 = Entry(by)
         self.entry1.place(relx=0.509, rely=0.23, width=240, height=24)
         self.entry1.configure(font="-family {Poppins} -size 12")
         self.entry1.configure(relief="flat")
         self.entry1.configure(textvariable=cust_name)
 
-        self.entry2 = Entry(adm)
+        self.entry2 = Entry(by)
         self.entry2.place(relx=0.791, rely=0.23, width=240, height=24)
         self.entry2.configure(font="-family {Poppins} -size 12")
         self.entry2.configure(relief="flat")
         self.entry2.configure(textvariable=cust_num)
 
-        self.entry3 = Entry(adm)
+        self.entry3 = Entry(by)
         self.entry3.place(relx=0.102, rely=0.23, width=240, height=24)
         self.entry3.configure(font="-family {Poppins} -size 12")
         self.entry3.configure(relief="flat")
         self.entry3.configure(textvariable=cust_search_bill)
 
-        self.button1 = Button(adm)
+        self.button1 = Button(by)
         self.button1.place(relx=0.031, rely=0.104, width=76, height=23)
         self.button1.configure(relief="flat")
         self.button1.configure(overrelief="flat")
@@ -584,7 +576,7 @@ class Buy:
         self.button1.configure(text="""Logout""")
         self.button1.configure(command=logout)
 
-        self.button2 = Button(adm)
+        self.button2 = Button(by)
         self.button2.place(relx=0.315, rely=0.234, width=76, height=23)
         self.button2.configure(relief="flat")
         self.button2.configure(overrelief="flat")
@@ -597,7 +589,7 @@ class Buy:
         self.button2.configure(text="""Search""")
         self.button2.configure(command=self.search_bill)
 
-        self.button3 = Button(adm)
+        self.button3 = Button(by)
         self.button3.place(relx=0.048, rely=0.885, width=86, height=25)
         self.button3.configure(relief="flat")
         self.button3.configure(overrelief="flat")
@@ -610,7 +602,7 @@ class Buy:
         self.button3.configure(text="""Total""")
         self.button3.configure(command=self.total_bill)
 
-        self.button4 = Button(adm)
+        self.button4 = Button(by)
         self.button4.place(relx=0.141, rely=0.885, width=84, height=25)
         self.button4.configure(relief="flat")
         self.button4.configure(overrelief="flat")
@@ -623,7 +615,7 @@ class Buy:
         self.button4.configure(text="""Generate""")
         self.button4.configure(command=self.gen_bill)
 
-        self.button5 = Button(adm)
+        self.button5 = Button(by)
         self.button5.place(relx=0.230, rely=0.885, width=86, height=25)
         self.button5.configure(relief="flat")
         self.button5.configure(overrelief="flat")
@@ -636,7 +628,7 @@ class Buy:
         self.button5.configure(text="""Clear""")
         self.button5.configure(command=self.clear_bill)
 
-        self.button6 = Button(adm)
+        self.button6 = Button(by)
         self.button6.place(relx=0.322, rely=0.885, width=86, height=25)
         self.button6.configure(relief="flat")
         self.button6.configure(overrelief="flat")
@@ -649,7 +641,7 @@ class Buy:
         self.button6.configure(text="""Exit""")
         self.button6.configure(command=exitt)
 
-        self.button7 = Button(adm)
+        self.button7 = Button(by)
         self.button7.place(relx=0.098, rely=0.734, width=86, height=26)
         self.button7.configure(relief="flat")
         self.button7.configure(overrelief="flat")
@@ -662,7 +654,7 @@ class Buy:
         self.button7.configure(text="""Add To Cart""")
         self.button7.configure(command=self.add_to_cart)
 
-        self.button8 = Button(adm)
+        self.button8 = Button(by)
         self.button8.place(relx=0.274, rely=0.734, width=84, height=26)
         self.button8.configure(relief="flat")
         self.button8.configure(overrelief="flat")
@@ -675,7 +667,7 @@ class Buy:
         self.button8.configure(text="""Clear""")
         self.button8.configure(command=self.clear_selection)
 
-        self.button9 = Button(adm)
+        self.button9 = Button(by)
         self.button9.place(relx=0.194, rely=0.734, width=68, height=26)
         self.button9.configure(relief="flat")
         self.button9.configure(overrelief="flat")
@@ -708,20 +700,20 @@ class Buy:
         self.combo1.option_add("*TCombobox*Listbox.selectBackground", "#D2463E")
 
 
-        self.combo2 = ttk.Combobox(adm)
+        self.combo2 = ttk.Combobox(by)
         self.combo2.place(relx=0.035, rely=0.479, width=477, height=26)
         self.combo2.configure(font="-family {Poppins} -size 8")
         self.combo2.option_add("*TCombobox*Listbox.font", text_font) 
         self.combo2.configure(state="disabled")
 
 
-        self.combo3 = ttk.Combobox(adm)
+        self.combo3 = ttk.Combobox(by)
         self.combo3.place(relx=0.035, rely=0.551, width=477, height=26)
         self.combo3.configure(state="disabled")
         self.combo3.configure(font="-family {Poppins} -size 8")
         self.combo3.option_add("*TCombobox*Listbox.font", text_font)
 
-        self.entry4 = ttk.Entry(adm)
+        self.entry4 = ttk.Entry(by)
         self.entry4.place(relx=0.035, rely=0.629, width=477, height=26)
         self.entry4.configure(font="-family {Poppins} -size 8")
         self.entry4.configure(foreground="#000000")
